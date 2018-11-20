@@ -1,7 +1,7 @@
 <div class="py-5">
     <div class="row">
       <div class="col-md-6 mx-auto">
-        <span class="anchor" id="formLogin"></span>
+        <span class="anchor" ></span>
         <div class="card rounded-0">
           <div class="card-header">
             <h3 class="mb-0">Add Products</h3>
@@ -9,7 +9,7 @@
           <div class="card-body">
             <form class="form">
                 <div class="form-group">
-                  <label for="uname1">Type</label>
+                  <label>Type</label>
                   <input type="text" [(ngModel)]="addUserData.type" name="type" class="form-control rounded-0" required>
                 </div>
     
@@ -25,7 +25,7 @@
 
                 <div class="form-group">
                   <label>Count</label>
-                  <input type="number" [(ngModel)]="addUserData.count" name="count" class="form-control rounded-0" >
+                  <input type="number" (keydown.enter)="addData()" [(ngModel)]="addUserData.count" name="count" class="form-control rounded-0" >
                 </div>
                 
                 <button type="button" (click)="addData()" class="btn btn-primary float-right">Add</button>
