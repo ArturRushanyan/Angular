@@ -6,11 +6,12 @@ import { AddComponent } from './add/add.component';
 import { ItemComponent } from './item/item.component';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/item',
+    redirectTo: 'item',
     pathMatch: 'full'
   },
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'logout',
     component: LogoutComponent,
+  },
+  {
+    path: 'seatch',
+    component: SearchComponent,
   }
 ];
 

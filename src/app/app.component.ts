@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './auth.service';
+import { EventService } from './event.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,20 @@ import { AuthService } from './auth.service';
 export class AppComponent {
   title = 'Sweets';
 
-  constructor(private _authService: AuthService) { }
+  searchData =[];
+  constructor(private _authService: AuthService, 
+              private _eventService: EventService,
+              private _router: Router) { }
 
+  userSearchingItem() {
+    this._eventService.searchItem(this.searchData)
+    .subscribe(
+        res => {
+          
+          this._router.navigate(['/search']);
+        },
+        err => console.log(err),
+    )
+  }
 
 }

@@ -5,8 +5,13 @@ import { HttpClient } from '@angular/common/http';
 export class EventService {
 
   private _getItemUrl = 'http://localhost:3000/api/v1/item';
+  private _searchUrl  = 'http://localhost:3000/search';
 
   constructor(private http: HttpClient) { }
+
+  getToken() {
+    return localStorage.getItem('token');
+  }
 
   getItems() {
     return this.http.get<any>(this._getItemUrl);
@@ -16,8 +21,8 @@ export class EventService {
     return this.http.post<any>(this._getItemUrl, item);
   }
 
-  getToken() {
-    return localStorage.getItem('token');
+  searchItem(searchItem) {
+    return this.http.get<any>(this._searchUrl, searchItem.name);
   }
 
 }

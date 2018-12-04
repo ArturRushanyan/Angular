@@ -14,6 +14,7 @@ import { EventService } from './event.service';
 import { AuthGuard } from './auth.guard';
 import { CookieService } from 'ngx-cookie-service';
 import { LogoutComponent } from './logout/logout.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     AddComponent,
     ItemComponent,
-    LogoutComponent
+    LogoutComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
