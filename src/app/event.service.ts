@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class EventService {
 
   private _getItemUrl = 'http://localhost:3000/api/v1/item';
-  private _searchUrl  = 'http://localhost:3000/search';
+  private _searchUrl = 'http://localhost:3000/search/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, 
+              private _cookieService: CookieService) { }
 
   getToken() {
-    return localStorage.getItem('token');
+    return this._cookieService.get('token');
   }
 
   getItems() {
@@ -22,7 +24,7 @@ export class EventService {
   }
 
   searchItem(searchItem) {
-    return this.http.get<any>(this._searchUrl, searchItem.name);
+    return this.http.get<any>(this._searchUrl, searchItem);
   }
 
 }

@@ -11,14 +11,15 @@
       </li>
     </ul>
 
+
     <div class="input-group">
-        <input type="text" class="form-control" (keydown.enter)="userSearchingItem()"  [(ngModel)]="searchData.name" placeholder="Search" aria-label="Example text with button addon" aria-describedby="button-addon1">
-         <div class="input-group-prepend">
-          <button class="btn btn-default" (click)="userSearchingItem()" type="button">Search</button>
+        <input type="text" class="form-control" (keydown.enter)="searchItem()" [(ngModel)]="searchData" placeholder="Search" aria-label="Example text with button addon" aria-describedby="button-addon1">
+        <div class="input-group-prepend">
+          <button class="btn btn-default" (click)="searchItem()" type="button">Search</button>
         </div>
-        
     </div>
     
+
     <ul class="navbar-nav ml-auto">
       <a class="nav-link" *ngIf="!_authService.loggedIn()" style="cursor:pointer" routerLink="/login" routerLinkActive="active">Login</a>
       <a class="nav-link" *ngIf="!_authService.loggedIn()" style="cursor:pointer" routerLink="/register" routerLinkActive="active">Register</a>
@@ -27,5 +28,5 @@
   </div>
 </nav>    
 <div class="container">
-  <router-outlet></router-outlet>
+  <router-outlet></router-outlet>            
 </div>

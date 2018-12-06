@@ -36,7 +36,7 @@ const routes: Routes = [
     component: LogoutComponent,
   },
   {
-    path: 'seatch',
+    path: 'seatch/:name',
     component: SearchComponent,
   }
 ];
