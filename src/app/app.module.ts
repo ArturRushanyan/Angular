@@ -11,7 +11,6 @@ import { AuthService } from './auth.service';
 import { AddComponent } from './add/add.component';
 import { ItemComponent } from './item/item.component';
 import { EventService } from './event.service';
-import { AuthGuard } from './auth.guard';
 import { CookieService } from 'ngx-cookie-service';
 import { LogoutComponent } from './logout/logout.component';
 import { SearchComponent } from './search/search.component';
@@ -33,7 +32,7 @@ import { SearchComponent } from './search/search.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService, EventService, AuthGuard, CookieService],
+  providers: [AuthService, EventService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,13 +11,15 @@
       </li>
     </ul>
 
-
+    <!--(keydown.enter)="searchItem()"-->
     <div class="input-group">
-        <input type="text" class="form-control" (keydown.enter)="searchItem()" [(ngModel)]="searchData" placeholder="Search" aria-label="Example text with button addon" aria-describedby="button-addon1">
+        <input type="text" class="form-control" (keydown.enter)="searchingItem()" [(ngModel)]="searchingData.name" placeholder="Search" aria-label="Example text with button addon" aria-describedby="button-addon1">
         <div class="input-group-prepend">
-          <button class="btn btn-default" (click)="searchItem()" type="button">Search</button>
+          <button class="btn btn-success float-right" (click)="searchingItem()" type="button">Search</button>
         </div>
     </div>
+
+    <!--(click)="searchItem()"-->
     
 
     <ul class="navbar-nav ml-auto">

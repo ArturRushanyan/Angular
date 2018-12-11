@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -9,20 +8,13 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  searchData = {};
-  constructor(private _event: EventService,
-              private _router: Router) { }
+  
+  constructor(private _event: EventService) { }
 
   ngOnInit() {
-    this._event.searchItem(this.searchData)
-    .subscribe(
-      res => {
-        console.log(res),
-        console.log('_+_+_+_+_+_+_+_+_+ ', this.searchData[0]),
-        this._router.navigate(['/search'])
-      },
-      err => console.log(err),
-    )
   }
+
+  
+
 
 }

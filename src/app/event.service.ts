@@ -24,7 +24,8 @@ export class EventService {
   }
 
   searchItem(searchItem) {
-    return this.http.get<any>(this._searchUrl, searchItem);
+    console.log('_+_+_+_+_+_+ searching Item = ' + searchItem.name);
+    return this.http.get(this._searchUrl + searchItem.name);
   }
 
 }
